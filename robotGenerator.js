@@ -17,7 +17,7 @@ var define_robotdulab = '#include <Servo.h>\n'+
 Blockly.Arduino ['Avancer'] = function (block)  {
   Blockly.Arduino.setups_["setup_robotdulab"] = setup_robotdulab;
   Blockly.Arduino.definitions_["define_robotdulab"] = define_robotdulab; 
-  var time = Blockly.Arduino.valueToCode(block, 'SPEED_POURCENT', Blockly.Arduino.ORDER_ATOMIC);
+  var speed = Blockly.Arduino.valueToCode(block, 'SPEED_POURCENT', Blockly.Arduino.ORDER_ATOMIC);
   var code  ="robotDuLAB.Avancer();\n";
   return  code;
 };
