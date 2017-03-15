@@ -86,6 +86,11 @@ Blockly.Arduino['VERT'] = function (block)  {
   return  [ code,  Blockly.Arduino.ORDER_ATOMIC ];
 };
 
+Blockly.Arduino['ORANGE'] = function (block)  {
+  var code  ="ORANGE";
+  return  [ code,  Blockly.Arduino.ORDER_ATOMIC ];
+};
+
 Blockly.Arduino['ROUGE'] = function (block)  {
   var code  ="ROUGE";
   return  [ code,  Blockly.Arduino.ORDER_ATOMIC ];
