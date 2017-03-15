@@ -5,10 +5,10 @@ Blockly.Blocks['Avancer'] = {
       "previousStatement": null,
       "nextStatement": null
     });
-    this.appendValueInput("SPEED_POURCENT", "Number")
+    this.setColour(300);
+    this.appendValueInput("SPEED_POURCENT", 'Number')
         .appendField("Avancer")
         .setCheck('Number');
-    this.setColour(300);
     this.setInputsInline(true);
     this.setTooltip('Fait avancer le robot');
    }
