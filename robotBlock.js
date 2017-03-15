@@ -9,6 +9,7 @@ Blockly.Blocks['Avancer'] = {
         .appendField("Avancer")
         .setCheck('Number');
     this.setColour(300);
+    this.setInputsInline(true);
     this.setTooltip('Fait avancer le robot');
    }
 };
