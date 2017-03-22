@@ -1,11 +1,10 @@
 Blockly.Blocks['Avancer'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
-  init: function() {
+  init: function() /*{
     this.jsonInit({
       "previousStatement": null,
       "nextStatement": null
-    });
-    this.setColour(300);
+    });*/
     this.appendDummyInput()
         .appendField("Avancer")
         .appendField(new Blockly.FieldDropdown([["25 %", "25"], 
@@ -14,8 +13,10 @@ Blockly.Blocks['Avancer'] = {
                                                 ["100 %", "100"]]), 
                                                     "Vitesse");
 
-    this.setOutput(true, 'Vitesse');
     this.setTooltip('Fait avancer le robot');
+
+    this.setOutput(true, 'Vitesse');
+    this.setColour(300);
    }
 };
 
