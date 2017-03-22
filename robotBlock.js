@@ -5,11 +5,17 @@ Blockly.Blocks['Avancer'] = {
       "previousStatement": null,
       "nextStatement": null
     });
+    this.appendDummyInput()
     this.setColour(300);
     this.appendValueInput("SPEED_POURCENT", 'Number')
         .appendField("Avancer")
-        .setCheck('Number');
-    this.setInputsInline(true);
+        .appendField(new Blockly.FieldDropdown([["25 %", "25"], 
+                                                ["50 %", "50"], 
+                                                ["75 %", "75"], 
+                                                ["100 %", "100"]]), 
+                                                    "Vitesse");
+
+    this.setOutput(true, 'Vitesse');
     this.setTooltip('Fait avancer le robot');
    }
 };
