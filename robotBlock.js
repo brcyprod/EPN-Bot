@@ -178,7 +178,7 @@ Blockly.Blocks['VERT'] = {
     this.appendDummyInput()
         .appendField("VERT");
     this.setOutput(true, 'Couleur');
-    this.setColour(95);
+    this.setColour(24);
     this.setTooltip('');
   }
 };
