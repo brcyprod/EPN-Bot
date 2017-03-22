@@ -1,10 +1,10 @@
 Blockly.Blocks['Avancer'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
-  init: function() /*{
+  init: function() {
     this.jsonInit({
       "previousStatement": null,
       "nextStatement": null
-    });*/
+    });
     this.appendDummyInput()
         .appendField("Avancer")
         .appendField(new Blockly.FieldDropdown([["25 %", "25"], 
