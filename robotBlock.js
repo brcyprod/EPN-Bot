@@ -10,7 +10,7 @@ Blockly.Blocks['Avancer'] = {
         .appendField(new Blockly.FieldDropdown([["25 %", "25"], 
                                                 ["50 %", "50"], 
                                                 ["75 %", "75"], 
-                                                ["100 %", "100"]]), 
+                                                ["100 %", "32"]]), 
                                                     "Vitesse")
 
     this.setTooltip('Fait avancer le robot');
