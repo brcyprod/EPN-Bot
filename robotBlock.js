@@ -5,9 +5,8 @@ Blockly.Blocks['Avancer'] = {
       "previousStatement": null,
       "nextStatement": null
     });
-    this.appendDummyInput()
     this.setColour(300);
-    this.appendValueInput("SPEED_POURCENT", 'Number')
+    this.appendDummyInput()
         .appendField("Avancer")
         .appendField(new Blockly.FieldDropdown([["25 %", "25"], 
                                                 ["50 %", "50"], 
