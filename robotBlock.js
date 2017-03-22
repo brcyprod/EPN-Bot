@@ -11,7 +11,7 @@ Blockly.Blocks['Avancer'] = {
                                                 ["50 %", "50"], 
                                                 ["75 %", "75"], 
                                                 ["100 %", "100"]]), 
-                                                    "Vitesse");
+                                                    "Vitesse")
 
     this.setTooltip('Fait avancer le robot');
 
