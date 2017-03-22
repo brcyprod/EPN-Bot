@@ -17,9 +17,10 @@ var define_robotdulab = '#include <Servo.h>\n'+
 Blockly.Arduino ['Avancer'] = function (block)  {
   Blockly.Arduino.setups_["setup_robotdulab"] = setup_robotdulab;
   Blockly.Arduino.definitions_["define_robotdulab"] = define_robotdulab; 
-  var speed = Blockly.Arduino.valueToCode(block, 'SPEED_POURCENT', Blockly.Arduino.ORDER_ATOMIC);
-  var code  ="robotDuLAB.Avancer("+speed+");\n";
-  return  code;
+  var dropdown_option = block.getFieldValue('Animation');
+  var value_option = Blockly.Arduino.valueToCode(block, 'Vitesse', Blockly.Arduino.ORDER_ATOMIC);
+  var code  = "robotDuLAB.Avancer("+dropdown_option+");\n";
+  return  [ code,  Blockly.Arduino.ORDER_ATOMIC ];
 };
 
 Blockly.Arduino ['Reculer'] = function (block)  {
