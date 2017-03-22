@@ -20,7 +20,7 @@ Blockly.Arduino ['Avancer'] = function (block)  {
   var dropdown_option = block.getFieldValue('Vitesse');
   var value_option = Blockly.Arduino.valueToCode(block, 'Vitesse', Blockly.Arduino.ORDER_ATOMIC);
   var code  = "robotDuLAB.Avancer("+dropdown_option+");\n";
-  return  [ code,  Blockly.Arduino.ORDER_ATOMIC ];
+  return  code;
 };
 
 Blockly.Arduino ['Reculer'] = function (block)  {
