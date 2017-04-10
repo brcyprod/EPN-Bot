@@ -23,6 +23,13 @@ Blockly.Arduino ['Avancer'] = function (block)  {
   return  code;
 };
 
+/*Blockly.Arduino ['Avancer'] = function (block)  {
+  Blockly.Arduino.setups_["setup_robotdulab"] = setup_robotdulab;
+  Blockly.Arduino.definitions_["define_robotdulab"] = define_robotdulab;
+  var code  ="robotDuLAB.Avancer();\n";
+  return  code;
+};*/
+
 Blockly.Arduino ['Reculer'] = function (block)  {
   Blockly.Arduino.setups_["setup_robotdulab"] = setup_robotdulab;
   Blockly.Arduino.definitions_["define_robotdulab"] = define_robotdulab;
@@ -87,11 +94,6 @@ Blockly.Arduino['VERT'] = function (block)  {
   return  [ code,  Blockly.Arduino.ORDER_ATOMIC ];
 };
 
-Blockly.Arduino['ORANGE'] = function (block)  {
-  var code  ="ORANGE";
-  return  [ code,  Blockly.Arduino.ORDER_ATOMIC ];
-};
-
 Blockly.Arduino['ROUGE'] = function (block)  {
   var code  ="ROUGE";
   return  [ code,  Blockly.Arduino.ORDER_ATOMIC ];
@@ -150,6 +152,18 @@ Blockly.Arduino['if_inf'] = function(block) {
   var statements_faire = Blockly.Arduino.statementToCode(block, 'Faire');
 
   var code = 'if (robotDuLAB.getDistanceObstacle() < ' + value_distance +  ')\n{\n' +
+              statements_faire + '} \n';
+
+  return code;
+};
+
+Blockly.Arduino['if_color'] = function(block) {
+  Blockly.Arduino.setups_["setup_robotdulab"] = setup_robotdulab;
+  Blockly.Arduino.definitions_["define_robotdulab"] = define_robotdulab;
+  var couleur = Blockly.Arduino.valueToCode(block, 'Couleur', Blockly.Arduino.ORDER_ATOMIC)||'VERT';
+  var statements_faire = Blockly.Arduino.statementToCode(block, 'Faire');
+
+  var code = 'if (strcascmp(robotDuLAB.getColorZone(),' + couleur + ')==0)\n{\n' +
               statements_faire + '} \n';
 
   return code;
