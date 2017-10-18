@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Robot pédagogique</title>
+<title>Projet EPN-Bot</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- JQuery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
@@ -44,6 +44,7 @@
 
     body {
         font: 400 15px/1.8 Lato, sans-serif;
+        <!--color: #fff;-->
         color: #777;
     }
     h3, h4 {
@@ -80,7 +81,9 @@
       }
     }
     .bg-1 {
-        background: #2d2d30;
+        /*fond presntation / arduino / contact */
+        /*background: #2d2d30;*/
+        background: #002942;
         color: #bdbdbd;
     }
     .bg-1 h3 {color: #fff;}
@@ -135,7 +138,8 @@
     .navbar {
         font-family: Montserrat, sans-serif;
         margin-bottom: 0;
-        background-color: #2d2d30;
+        /*background-color: #2d2d30;*/
+        background-color: #0268a6;
         border: 0;
         font-size: 11px !important;
         letter-spacing: 4px;
@@ -150,6 +154,7 @@
     .navbar-nav li.active a {
         color: #fff !important;
         background-color: #29292c !important;
+        /*background-color: #013e63 !important;*/
     }
     .navbar-default .navbar-toggle {
         border-color: transparent;
@@ -165,7 +170,8 @@
         background-color: red !important;
     }
     footer {
-        background-color: #2d2d30;
+        /*background-color: #2d2d30;*/
+        background-color: #002942;
         color: #f5f5f5;
         padding: 32px;
     }
@@ -195,14 +201,16 @@
 <!-- Navbar --> 
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
      <div class="navbar-header">
-       <a class="navbar-brand" href="#">RobotDuLAB</a>
+       <a class="navbar-brand" href="#">Projet EPN-Bot</a>
      </div>
      <ul class="nav navbar-nav">
       <li><a href="#home">Accueil</a></li>
+      <li><a href="#presentation">Présentation</a></li>
       <li><a href="#blockly">Blockly</a></li>
       <li><a href="#arduino">Code Arduino</a></li>
       <li><a href="#lequipe">L'Équipe</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+      <li><a href="#contact">Contact</a></li>
+      <!--<li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>-->
      </ul>
 </nav>
 
@@ -231,13 +239,13 @@
       </div>      
      </div>
    
-     <div class="item">
+     <!--<div class="item">
       <img src="images/Logo_labo-3333px.png" alt="Laboratoire d'Aix-périmentation et de Bidouille" width="1200" height="700">
       <div class="carousel-caption">
         <h3>Imaginé et conçu par une large communauté de Makers</h3>
       </div>      
      </div>
-   </div>
+   </div>-->
 
    <!-- Left and right controls -->
    <a class="left carousel-control" href="#Carousel" role="button" data-slide="prev">
@@ -254,21 +262,17 @@
 <!-- Container (Section Présentation du projet) -->  
 <div id=presentation class="bg-1">
     <div class="container">
-   <h3>Un robot pour apprendre à programmer aux enfants</h3>
-   <ul>
-     <li> Utilisable en écoles primaires, collèges et lycées </li>
-     <li>Toutes les pièces mécaniques sont imprimables (impression 3D – fichiers .stl fournis) </li>
-     <li>Partie électronique basée sur une carte de prototypage « arduino » </li>
-     <li>Libre (copiable, modifiable) et évolutif (de nombreuses options possibles) </li>
-   </ul>
+   <h3>Un robot pour découvrir le monde de la robotique et apprendre à programmer pour tout âge</h3>
    <p>
-   RoboduLAB, permet une approche ludique de l’apprentissage du code à l’école primaire, des plots au format lego permettent de personnaliser le robot. En collège et en lycée RoboduLAB est un support de thème très riche pour le travail en équipes projets : conception, réalisation, expérimentation. 
+   Le projet EPN-Bot s'appuie sur le projet RobotduLAB concu et fourni par le Laboratoire d'Aix-périmentation et de Bidouille d'Aix-En-Provence <a href="http://wiki.labaixbidouille.com/index.php/RoboduLAB">(http://wiki.labaixbidouille.com/index.php/RoboduLAB)</a>, 
+       et il est porté par les Espaces Publics Numériques du Pays de Martigues - Métropole Aix-Marseille Provence - <a href="https://www.facebook.com/espaces.publics.numeriques.pays.de.martigues">(https://www.facebook.com/espaces.publics.numeriques.pays.de.martigues)</a>.
    </p> 
    <p>
-   La programmation se fait par assemblage de blocs (type scratch). Le programme se télécharge directement dans le robot depuis le PC ou la tablette.
+   Ludique et pratique, cet atelier est là pour vous faire découvrir le monde de la robotique tout en s'amusant et destiné à tous les niveaux informatiques.
+   La programmation se fait facilement par assemblage de blocs (type scratch) depuis n'importe quel lieu et support informatique (Ordinateur, tablette).
    </p>
    <p>
-   La documentation du projet ainsi que tous les fichiers nécessaires à la réalisation d'un RobotDuLAB sont disponibles à l'adresse suivante : <a href="http://wiki.labaixbidouille.com/index.php/RoboduLAB">http://wiki.labaixbidouille.com/index.php/RoboduLAB</a>
+   Venez découvrir ce monde avec nous en restant libre de continuer chez vous.
    </p>
     </div>
 </div>
@@ -277,13 +281,17 @@
 <div id="blockly" class="container">
     <h3 class="text-center">Blockly</h3>
     <div id="blocklyDiv" style="height: 700px;"></div>
+    <!--<font color="#bdbdbd">-->
+    <!--<font color="#0f0808">-->
     <xml id="toolbox" style="display: none">
        <category name="Robot" colour="300">
          <block type="Avancer"></block>
          <block type="Reculer"></block>
          <block type="Arreter"></block>
          <block type="TournerAGauche"></block>
-         <block type="TournerADroite"></block>
+         <block type="TournerADroite"></block>   
+         <block type="CorrigeAGauche"></block>
+         <block type="CorrigeADroite"></block>   
          <block type="Attendre">
             <value name="DELAY_TIME">
                 <block type="math_number">
@@ -291,7 +299,6 @@
                 </block>
             </value>
          </block>
-         <block type="Distance"></block>
        </category>
 
        <category name="Anneau de LED" colour="50">
@@ -305,6 +312,10 @@
          <block type="TURQUOISE"></block>
          <block type="JAUNE"></block>
          <block type="VIOLET"></block>
+         <block type="BLANC"></block>
+         <block type="ROSE"></block>
+         <block type="GRIS"></block>
+         <block type="NOIR"></block>
        </category>
 
         <category name="Logique" colour="210">
@@ -315,7 +326,6 @@
                   </block>
                 </value>
           </block>
-          <block type="if_color"></block>
           <block type="if_sup">
               <value name="Distance">
                 <block type="math_number">
@@ -323,11 +333,15 @@
                 </block>
               </value>
           </block>
+          <block type="if_color"></block>
+          <block type="if_color_ligne"></block>
+          <block type="if_inter_bot"></block>
           <block type="controls_if"></block>
           <block type="logic_compare"></block>
           <block type="logic_operation"></block>
           <block type="logic_negate"></block>
           <block type="logic_null"></block>
+          <block type="text_compare"></block>
         </category>
 
         <category name="Structure de Controle" colour="120">
@@ -363,10 +377,23 @@
 
         <category name="Math" colour="230">
           <block type="math_number"></block>
-          <block type="math_arithmetic"></block>
+          <block type="math_arithmetic"></block>  
         </category>
-
+        
+        <category name="Variable" colour="24">
+          <block type="AffectationVariable"></block>
+          <block type="EtatRobot"></block>
+          <block type="ConvertisseurVariableNumber"></block>
+        </category>
+        
+        <category name="Fonction" colour="0">   
+         <block type="DistanceObstacle"></block>
+          <block type="CouleurZone"></block>
+          <block type="CouleurLigne"></block>
+        </category>
+        
     </xml>
+    </font>
 </div>
 
 
@@ -387,28 +414,24 @@
       <h3>L'Équipe</h3>
       <div class="row">
         <div class="col-sm-4">
-          <p class="text-center"><strong>Guy Sinnig</strong></p><br>
+            <p class="text-center"><font color="#bdbdbd"><strong>Élodie</strong></font></p><br>
           <a href="#demo" data-toggle="collapse">
-            <img src="images/guy.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
+            <img src="images/user-310807_640.png" class="img-circle person" alt="Random Name" width="250" height="250">
           </a>
           <div id="demo" class="collapse">
-            <p>Responsable projet</p>
-            <p>Électronicien pédagogue</p>
-            <p>Membre depuis 2013</p>
+              <p><font color="#bdbdbd">Médiatrice Numérique depuis 2012</font></p>
           </div>
         </div>
         <div class="col-sm-4">
-          <p class="text-center"><strong>Frank Anjeaux</strong></p><br>
+            <p class="text-center"><font color="#bdbdbd"><strong>Brice</strong></font></p><br>
           <a href="#demo2" data-toggle="collapse">
-            <img src="images/frank.png" class="img-circle person" alt="Random Name" width="255" height="255">
+            <img src="images/businessman-310819_640.png" class="img-circle person" alt="Random Name" width="250" height="250">
           </a>
           <div id="demo2" class="collapse">
-            <p>Animation de communauté</p>
-            <p>Roboticien humoriste</p>
-            <p>Membre depuis 2013</p>
+              <p><font color="#bdbdbd">Médiateur Numérique depuis 2014</font></p>
           </div>
         </div>
-        <div class="col-sm-4">
+        <!--<div class="col-sm-4">
           <p class="text-center"><strong>Sébastien NEDJAR</strong></p><br>
           <a href="#demo3" data-toggle="collapse">
             <img src="images/seb.png" class="img-circle person" alt="Random Name" width="255" height="255">
@@ -418,7 +441,7 @@
             <p>Informaticien geek</p>
             <p>Membre depuis 2013</p>
           </div>
-        </div>
+        </div>-->
       </div>
     </div>
 </div>
@@ -429,15 +452,27 @@
 <div id="contact" class="bg-1">
     <div  class="container">
         <h3 class="text-center">Contact</h3>
-        <p class="text-center"><em>N'hésitez pas à nous laisser un message</em></p>
+        <p class="text-center"><em>N'hésitez pas à prendre contact avec nous</em></p>
 
         <div class="row">
-            <div class="col-md-4">
-                <p><span class="glyphicon glyphicon-map-marker"></span>Aix-en-Provence, France</p>
-                <p><span class="glyphicon glyphicon-phone"></span>Phone: +33 04 42 93 90 91</p>
-                <p><span class="glyphicon glyphicon-envelope"></span>Email: robotdulab@labaixbidouille.com</p>
-            </div>
-            <div class="col-md-8">
+                <p><span class="glyphicon glyphicon-map-marker"></span>Espace Numérique de la Maison de la formation et de la Jeunesse, Quai Poterne, Quartier de l'île, 13500 Martigues</p>
+                <p><span class="glyphicon glyphicon-phone"></span>Téléphone: +33 04 42 49 45 98</p>
+                <p></p><p></p>
+                <p><span class="glyphicon glyphicon-map-marker"></span>Espace Numérique de la Médiathèque Louis Aragon, Quai des Anglais, Quartier de l'île, 13500 Martigues</p>
+                <p><span class="glyphicon glyphicon-phone"></span>Téléphone: +33 04 42 49 02 67</p>
+                <p></p><p></p>
+                <p><span class="glyphicon glyphicon-map-marker"></span>Espace Numérique de la Maison des Services au Public,  rue Charles Nédélec, 13110 Port-De-Bouc</p>
+                <p><span class="glyphicon glyphicon-phone"></span>Téléphone: +33 04 42 40 65 27</p>
+                <p></p><p></p>
+                <p><span class="glyphicon glyphicon-map-marker"></span>Espace Numérique de la Bibliothèque Charles Rostaing, Rue Pierre et Marie Currie, 13920 Saint-Mitre-Les-Remparts</p>
+                <p><span class="glyphicon glyphicon-phone"></span>Téléphone: +33 04 42 49 15 11</p>
+                <p></p><p></p>
+                <p><span class="glyphicon glyphicon-envelope"></span>Email: espaces.numeriques@paysdemartigues.fr</p>
+                <img src="images/Logo (Couleur) EPN.bmp" height="100" width="95">
+                <img src="images/Logo (Couleur) E.R.I.C. Simple.jpg" height="100" width="222">
+                <img src="images/logo_mediation_numerique.png" height="100" width="170">
+                <img src="images/logo (Couleur) Nouveau Metropole Aix Marseille Provence Territoire du Pays de Martigues + pays de martigues.jpg" height="100" width="344">
+            <!--<div class="col-md-8">
                 <div class="row">
                     <div class="col-sm-6 form-group">
                         <input class="form-control" id="name" name="name" placeholder="Nom" type="text" required>
@@ -453,7 +488,7 @@
                         <button class="btn pull-right" type="submit">Envoyer</button>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div>
     </div>
 </div>
@@ -546,9 +581,9 @@
       
 <footer class="text-center">
     <a class="up-arrow" href="#home" data-toggle="tooltip" title="TO TOP">
-      <span class="glyphicon glyphicon-chevron-up"></span>
+        <p><span class="glyphicon glyphicon-chevron-up"></span></p>
     </a><br>
-    <p>RobotDuLAB est un projet communautaire du <a href="http://labaixbidouille.com" data-toggle="tooltip" title="Visiter labaixbidouille.com">Laboratoire d'Aix-périmentation et de Bidouille</a></p> 
+    <!--<p>RobotDuLAB est un projet communautaire du <a href="http://labaixbidouille.com" data-toggle="tooltip" title="Visiter labaixbidouille.com">Laboratoire d'Aix-périmentation et de Bidouille</a></p> -->
 </footer>
 
 </body>
