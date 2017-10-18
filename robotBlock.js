@@ -60,6 +60,23 @@ Blockly.Blocks['Arreter'] = {
    }
 };
 
+Blockly.Blocks['ArreterPastMillis'] = {
+  helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
+  init: function() {
+    this.jsonInit({
+      "previousStatement": null,
+      "nextStatement": null
+    });
+    this.appendValueInput("DELAY_TIME", 'Number')
+        .appendField("Arreter au bout de ")
+        .setCheck('Number');
+    this.appendDummyInput()
+        .appendField(" milliseconde(s)");
+    this.setColour(300);
+    this.setTooltip('Stoppe le robot après un temps donnée en millisecondes');
+   }
+};
+
 Blockly.Blocks['TournerAGauche'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
   init: function() {
