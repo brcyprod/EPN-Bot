@@ -61,9 +61,11 @@ Blockly.Arduino ['ArreterPastMillis'] = function (block)  {
   Blockly.Arduino.setups_["setup_epnbot"] = setup_epnbot;
   Blockly.Arduino.definitions_["define_epnbot"] = define_epnbot;
   var time = Blockly.Arduino.valueToCode(block, 'DELAY_TIME', Blockly.Arduino.ORDER_ATOMIC);
+  var time2 = Blockly.Arduino.valueToCode(block, 'DELAY_TIME_STOP', Blockly.Arduino.ORDER_ATOMIC);
   var code  ='if((millis()-bcle_temps_arret)>'+time+')\n'+
         '{\n'+
         'EpnBot.Arreter();\n'+
+        'delay('+time2+');\n'+
         'bcle_temps_arret=millis();\n'+
         '}\n';
   return  code;
