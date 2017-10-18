@@ -109,7 +109,7 @@ Blockly.Arduino ['AnimerAnneauLed'] = function (block)  {
   
   var couleur = Blockly.Arduino.valueToCode(block, 'Couleur', Blockly.Arduino.ORDER_ATOMIC)||'VERT';
   var animation = Blockly.Arduino.valueToCode(block, 'Animation', Blockly.Arduino.ORDER_ATOMIC)||'COULEUR';
-  var pin = Blockly.Arduino.valueToCode(block, 'Pin_Led_avant', Blockly.Arduino.ORDER_ATOMIC);
+  var pin = Blockly.Arduino.valueToCode(block, 'Pin_Led_avant', Blockly.Arduino.ORDER_ATOMIC)||'0';
 
   var code  ="EpnBot.AnimerAnneauLed("+animation+","+couleur+","+pin+");\n";
   return  code;
