@@ -166,12 +166,12 @@ Blockly.Blocks['AnimerAnneauLed'] = {
         .setCheck('Couleur')
         .setAlign(Blockly.ALIGN_RIGHT);
 
-    this.appendValueInput('Animation')
+    this.appendValueInput("Animation", 'Animation')
         .appendField("Animation")
         .setCheck('Animation')
         .setAlign(Blockly.ALIGN_RIGHT);
     
-    this.appendValueInput('Pin_Led_avant')
+    this.appendValueInput("Pin_Led_avant", 'Pin_Led_avant')
         .appendField("Pin Led avant")
         .setCheck('Number')
         .setAlign(Blockly.ALIGN_RIGHT);
