@@ -72,6 +72,7 @@ Blockly.Blocks['ArreterPastMillis'] = {
         .setCheck('Number');
     this.appendDummyInput()
         .appendField(" milliseconde(s)");
+    this.setInputsInline(true);
     this.setColour(300);
     this.setTooltip('Stoppe le robot après un temps donnée en millisecondes');
    }
