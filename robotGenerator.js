@@ -66,7 +66,7 @@ Blockly.Arduino ['ArreterPastMillis'] = function (block)  {
         'EpnBot.Arreter();\n'+
         'bcle_temps_arret=millis();\n'+
         '}\n';
-  return  [ code,  Blockly.Arduino.ORDER_ATOMIC ];
+  return  code;
 };
 
 Blockly.Arduino ['TournerAGauche'] = function (block)  {
