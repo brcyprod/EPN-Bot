@@ -18,7 +18,7 @@ var define_epnbot = //'#include <Servo.h>\n'+
   '#define INTER_BOT 13 // interrupteur robot\n'+
   '#define GRAYSCALE_SENSOR 0 // broche analogique du capteur de gris\n'+ 
   '\n'+ 
-  '//boucle de temps arret'+
+  '//boucle de temps arret\n'+
   'unsigned long bcle_temps_arret=0;\n'+
   '\n'+ 
   'int etat_robot=0;\n'+
