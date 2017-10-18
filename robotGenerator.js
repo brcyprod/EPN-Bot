@@ -2,8 +2,8 @@ goog.provide('Blockly.Arduino.Robotdulab');
 goog.require('Blockly.Arduino');
 
 
-var setup_epnbot = "EpnBot.begin();\n"+
-                   "bcle_temps_arret=millis();\n";
+var setup_epnbot = 'EpnBot.begin();\n'+
+                   'bcle_temps_arret=millis();\n';
 
 var define_epnbot = //'#include <Servo.h>\n'+
  // '#include <Adafruit_NeoPixel.h>\n'+
@@ -61,12 +61,12 @@ Blockly.Arduino ['ArreterPastMillis'] = function (block)  {
   Blockly.Arduino.setups_["setup_epnbot"] = setup_epnbot;
   Blockly.Arduino.definitions_["define_epnbot"] = define_epnbot;
   var time = Blockly.Arduino.valueToCode(block, 'DELAY_TIME', Blockly.Arduino.ORDER_ATOMIC);
-  var code  ="if((millis()-bcle_temps_arret)>'+time+')\n"+
-        "{\n"+
-        "EpnBot.Arreter();\n"+
-        "bcle_temps_arret=millis();\n"+
-        "}\n";
-  return  code;
+  var code  ='if((millis()-bcle_temps_arret)>'+time+')\n'+
+        '{\n'+
+        'EpnBot.Arreter();\n'+
+        'bcle_temps_arret=millis();\n'+
+        '}\n';
+  return  [ code,  Blockly.Arduino.ORDER_ATOMIC ];
 };
 
 Blockly.Arduino ['TournerAGauche'] = function (block)  {
