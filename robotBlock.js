@@ -73,7 +73,7 @@ Blockly.Blocks['ArreterPastMillis'] = {
     this.appendDummyInput()
         .appendField(" milliseconde(s)");
     
-    this.appendValueInput("DELAY_TIME_STOP", 'Number')
+    this.appendValueInput("DELAY_TIME_STOP", 'Numberstop')
         .appendField("pendant ")
         .setCheck('Number');
     this.appendDummyInput()
