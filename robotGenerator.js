@@ -2,7 +2,8 @@ goog.provide('Blockly.Arduino.Robotdulab');
 goog.require('Blockly.Arduino');
 
 
-var setup_epnbot = "EpnBot.begin();\n";
+var setup_epnbot = "EpnBot.begin();\n"+
+                   "bcle_temps_arret=millis();\n";
 
 var define_epnbot = //'#include <Servo.h>\n'+
  // '#include <Adafruit_NeoPixel.h>\n'+
@@ -15,12 +16,12 @@ var define_epnbot = //'#include <Servo.h>\n'+
   //'#define GRAYSCALE_SENSOR 0 // broche du capteur suiveur de ligne\n\n'+
   '#define RELAI_ALIM_MOTEUR 2 // broche du relai alimentation des moteurs\n'+
   '#define INTER_BOT 13 // interrupteur robot\n'+
-  '#define GRAYSCALE_SENSOR 0 // broche analogique du capteur de gris\n'+
-    
-  '\n'+
-    
+  '#define GRAYSCALE_SENSOR 0 // broche analogique du capteur de gris\n'+ 
+  '\n'+ 
+  '//boucle de temps arret'+
+  'unsigned long bcle_temps_arret=0;\n'+
+  '\n'+ 
   'int etat_robot=0;\n'+
-
   '\n'+
     
   'EPNBot EpnBot(TRIGGER_PIN, ECHO_PIN, ROUE_DROITE_PIN, ROUE_GAUCHE_PIN, ANNEAU_LED_PIN, GRAYSCALE_SENSOR, RELAI_ALIM_MOTEUR, INTER_BOT);\n';
@@ -53,6 +54,18 @@ Blockly.Arduino ['Arreter'] = function (block)  {
   Blockly.Arduino.setups_["setup_epnbot"] = setup_epnbot;
   Blockly.Arduino.definitions_["define_epnbot"] = define_epnbot;
   var code  ="EpnBot.Arreter();\n";
+  return  code;
+};
+
+Blockly.Arduino ['ArreterPastMillis'] = function (block)  {
+  Blockly.Arduino.setups_["setup_epnbot"] = setup_epnbot;
+  Blockly.Arduino.definitions_["define_epnbot"] = define_epnbot;
+  var time = Blockly.Arduino.valueToCode(block, 'DELAY_TIME', Blockly.Arduino.ORDER_ATOMIC);
+  var code  ="if((millis()-bcle_temps_arret)>'+time+')\n"+
+        "{\n"+
+        "EpnBot.Arreter();\n"+
+        "bcle_temps_arret=millis();\n"+
+        "}\n";
   return  code;
 };
 
