@@ -359,3 +359,12 @@ Blockly.Arduino ['CouleurLigne'] = function (block)  {
   ///var code  ="EpnBot.Getsuiveurligne()";
   //return [ code,  Blockly.Arduino.ORDER_ATOMIC ];
 };
+
+/*Blockly.Arduino ['Telecommande'] = function (block)  {
+  var dropdown_option = block.getFieldValue('id_telecommande');
+  var code  ="if (irrecv.decode(&results)) {\n"+  
+      "Serial.println(results.value, HEX);\n"+
+      "results.value ==" + dropdown_option+")\n"+
+      "}\n";
+  return [ code,  Blockly.Arduino.ORDER_ATOMIC ];
+};*/
