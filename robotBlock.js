@@ -431,6 +431,44 @@ Blockly.Blocks['if_inter_bot'] = {
   }
 };
 
+Blockly.Blocks['if_telecommande'] = {
+  helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
+  init: function() {
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.appendDummyInput()
+        .appendField('Si touche de la telecommande appuyé')
+        .appendField(new Blockly.FieldDropdown([["On/Off", "0xFD00FF"], 
+                                                ["Vol+", ""], 
+                                                ["Vol-", ""], 
+                                                ["Précédent", "0xFD609F"], 
+                                                ["Suivant", "0xFD20DF"], 
+                                                ["Func/Stop", ""], 
+                                                ["Play/Pause", ""], 
+                                                ["Haut", ""], 
+                                                ["Bas", ""], 
+                                                ["Eq", ""], 
+                                                ["St/rept", ""], 
+                                                ["0", "0xFD30CF"], 
+                                                ["1", "0xFD08F7"], 
+                                                ["2", "0xFD8877"], 
+                                                ["3", "0xFD48B7"],  
+                                                ["4", "0xFD28D7"], 
+                                                ["5", "0xFDA857"], 
+                                                ["6", "0xFD6897"], 
+                                                ["7", "0xFD18E7"],
+                                                ["8", "0xFD9867"],
+                                                ["9", "0xFD58A7"]]), 
+                                                    "id_telecommande"); 
+    //this.setOutput(true, 'Boolean');
+   this.setInputsInline(true);
+    this.appendStatementInput("Faire")
+        .setCheck(null)
+        .appendField("alors");
+    this.setTooltip('Permet de choisir la touche de la télécommande');
+    this.setColour(0);
+  }
+};
 Blockly.Blocks['if_color_ligne'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
   init: function() {
@@ -783,43 +821,4 @@ Blockly.Blocks['CouleurLigne'] = {
     this.setColour(0);
     this.setTooltip('Retourne la couleur de la ligne (suiveur de ligne)');
    }
-};
-
-Blockly.Blocks['Telecommande'] = {
-  helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
-  init: function() {
-    /*this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);*/
-    this.appendDummyInput()
-        .appendField('Touche de la telecommande appuyé')
-        .appendField(new Blockly.FieldDropdown([["On/Off", "0xFD00FF"], 
-                                                ["Vol+", ""], 
-                                                ["Vol-", ""], 
-                                                ["Précédent", "0xFD609F"], 
-                                                ["Suivant", "0xFD20DF"], 
-                                                ["Func/Stop", ""], 
-                                                ["Play/Pause", ""], 
-                                                ["Haut", ""], 
-                                                ["Bas", ""], 
-                                                ["Eq", ""], 
-                                                ["St/rept", ""], 
-                                                ["0", "0xFD30CF"], 
-                                                ["1", "0xFD08F7"], 
-                                                ["2", "0xFD8877"], 
-                                                ["3", "0xFD48B7"],  
-                                                ["4", "0xFD28D7"], 
-                                                ["5", "0xFDA857"], 
-                                                ["6", "0xFD6897"], 
-                                                ["7", "0xFD18E7"],
-                                                ["8", "0xFD9867"],
-                                                ["9", "0xFD58A7"]]), 
-                                                    "id_telecommande"); 
-    this.setOutput(true, 'Boolean');
-   /* this.setInputsInline(true);
-    this.appendStatementInput("Faire")
-        .setCheck(null)
-        .appendField("alors");*/
-    this.setTooltip('Permet de choisir la touche de la télécommande');
-    this.setColour(0);
-  }
 };
