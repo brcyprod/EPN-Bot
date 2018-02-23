@@ -431,45 +431,6 @@ Blockly.Blocks['if_inter_bot'] = {
   }
 };
 
-Blockly.Blocks['if_telecommande'] = {
-  helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
-  init: function() {
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.appendDummyInput()
-        .appendField('Si touche de la telecommande appuyé')
-        .appendField(new Blockly.FieldDropdown([["On/Off", "COULEUR"], 
-                                                ["Vol+", "ARC_EN_CIEL"], 
-                                                ["Vol-", "ARC_EN_CIEL_ANIME"], 
-                                                ["Précédent", "ARC_EN_CIEL_CYCLIQUE"], 
-                                                ["Suivant", "COULEUR_CYCLIQUE"], 
-                                                ["Func/Stop", "CLIGNOTANT_DROIT"], 
-                                                ["Play/Pause", "CLIGNOTANT_GAUCHE"], 
-                                                ["Haut", "CLIGNOTANT"], 
-                                                ["Bas", "ARC_EN_CIEL"], 
-                                                ["Eq", "ARC_EN_CIEL_ANIME"], 
-                                                ["St/rept", "ARC_EN_CIEL_CYCLIQUE"], 
-                                                ["0", "COULEUR_CYCLIQUE"], 
-                                                ["1", "CLIGNOTANT_DROIT"], 
-                                                ["2", "CLIGNOTANT_GAUCHE"], 
-                                                ["3", "CLIGNOTANT"],  
-                                                ["4", "COULEUR_CYCLIQUE"], 
-                                                ["5", "CLIGNOTANT_DROIT"], 
-                                                ["6", "CLIGNOTANT_GAUCHE"], 
-                                                ["7", "CLIGNOTANT"],
-                                                ["8", "CLIGNOTANT"],
-                                                ["9", "ETEINDRE"]]), 
-                                                    "Telecommande"); 
-    this.setInputsInline(true);
-    this.appendStatementInput("Faire")
-        .setCheck(null)
-        .appendField("alors");
-    this.setTooltip('Permet de choisir la touche de la télécommande');
-    this.setColour(210);
-
-  }
-};
-
 Blockly.Blocks['if_color_ligne'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
   init: function() {
@@ -822,4 +783,43 @@ Blockly.Blocks['CouleurLigne'] = {
     this.setColour(0);
     this.setTooltip('Retourne la couleur de la ligne (suiveur de ligne)');
    }
+};
+
+Blockly.Blocks['Telecommande'] = {
+  helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
+  init: function() {
+    /*this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);*/
+    this.appendDummyInput()
+        .appendField('Si touche de la telecommande appuyé')
+        .appendField(new Blockly.FieldDropdown([["On/Off", "COULEUR"], 
+                                                ["Vol+", "ARC_EN_CIEL"], 
+                                                ["Vol-", "ARC_EN_CIEL_ANIME"], 
+                                                ["Précédent", "ARC_EN_CIEL_CYCLIQUE"], 
+                                                ["Suivant", "COULEUR_CYCLIQUE"], 
+                                                ["Func/Stop", "CLIGNOTANT_DROIT"], 
+                                                ["Play/Pause", "CLIGNOTANT_GAUCHE"], 
+                                                ["Haut", "CLIGNOTANT"], 
+                                                ["Bas", "ARC_EN_CIEL"], 
+                                                ["Eq", "ARC_EN_CIEL_ANIME"], 
+                                                ["St/rept", "ARC_EN_CIEL_CYCLIQUE"], 
+                                                ["0", "COULEUR_CYCLIQUE"], 
+                                                ["1", "CLIGNOTANT_DROIT"], 
+                                                ["2", "CLIGNOTANT_GAUCHE"], 
+                                                ["3", "CLIGNOTANT"],  
+                                                ["4", "COULEUR_CYCLIQUE"], 
+                                                ["5", "CLIGNOTANT_DROIT"], 
+                                                ["6", "CLIGNOTANT_GAUCHE"], 
+                                                ["7", "CLIGNOTANT"],
+                                                ["8", "CLIGNOTANT"],
+                                                ["9", "ETEINDRE"]]), 
+                                                    "Telecommande"); 
+    this.setOutput(true, 'Boolean');
+   /* this.setInputsInline(true);
+    this.appendStatementInput("Faire")
+        .setCheck(null)
+        .appendField("alors");*/
+    this.setTooltip('Permet de choisir la touche de la télécommande');
+    this.setColour(210);
+  }
 };
