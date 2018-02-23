@@ -227,6 +227,20 @@ Blockly.Arduino['if_inter_bot'] = function(block) {
   return code;
 };
 
+Blockly.Arduino['if_telecommande'] = function(block) {
+  Blockly.Arduino.setups_["setup_epnbot"] = setup_epnbot;
+  Blockly.Arduino.definitions_["define_epnbot"] = define_epnbot;
+  var statements_faire = Blockly.Arduino.statementToCode(block, 'Faire');
+  var dropdown_option = block.getFieldValue('id_telecommande');
+  var code =  'if (irrecv.decode(&results)) {\n'+  
+              '  if(results.value == 0xFD00FF){\n'+
+              '     '+statements_faire + '} \n'+
+              '  }\n'+     
+              '  irrecv.resume();\n'+  
+              '}\n';
+
+  return code;
+};
 /*Blockly.Arduino['if_color_ligne'] = function() {
   // If/elseif/else condition.
   var n = 0;
@@ -359,12 +373,3 @@ Blockly.Arduino ['CouleurLigne'] = function (block)  {
   ///var code  ="EpnBot.Getsuiveurligne()";
   //return [ code,  Blockly.Arduino.ORDER_ATOMIC ];
 };
-
-/*Blockly.Arduino ['Telecommande'] = function (block)  {
-  var dropdown_option = block.getFieldValue('id_telecommande');
-  var code  ="if (irrecv.decode(&results)) {\n"+  
-      "Serial.println(results.value, HEX);\n"+
-      "results.value ==" + dropdown_option+")\n"+
-      "}\n";
-  return [ code,  Blockly.Arduino.ORDER_ATOMIC ];
-};*/
