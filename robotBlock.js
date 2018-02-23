@@ -820,6 +820,6 @@ Blockly.Blocks['Telecommande'] = {
         .setCheck(null)
         .appendField("alors");*/
     this.setTooltip('Permet de choisir la touche de la télécommande');
-    this.setColour(210);
+    this.setColour(0);
   }
 };
