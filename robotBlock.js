@@ -791,7 +791,7 @@ Blockly.Blocks['Telecommande'] = {
     /*this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);*/
     this.appendDummyInput()
-        .appendField('Si touche de la telecommande appuyé')
+        .appendField('Touche de la telecommande appuyé')
         .appendField(new Blockly.FieldDropdown([["On/Off", "0xFD00FF"], 
                                                 ["Vol+", ""], 
                                                 ["Vol-", ""], 
