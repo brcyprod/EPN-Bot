@@ -230,10 +230,12 @@ Blockly.Arduino['if_inter_bot'] = function(block) {
 Blockly.Arduino['if_telecommande'] = function(block) {
   Blockly.Arduino.setups_["setup_epnbot"] = setup_epnbot;
   Blockly.Arduino.definitions_["define_epnbot"] = define_epnbot;
+  
   var statements_faire = Blockly.Arduino.statementToCode(block, 'Faire');
   var dropdown_option = block.getFieldValue('id_telecommande');
+  
   var code =  'if (irrecv.decode(&results)) {\n'+  
-              '  if(results.value == 0xFD00FF){\n'+
+              '  if(results.value == '+dropdown_option+'){\n'+
               '     '+statements_faire + '} \n'+
               '  }\n'+     
               '  irrecv.resume();\n'+  
