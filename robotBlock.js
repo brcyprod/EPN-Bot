@@ -437,6 +437,23 @@ Blockly.Blocks['if_telecommande'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.appendDummyInput()
+        .appendField('Si on utilise la télécommande');
+    //this.setOutput(true, 'Boolean');
+   this.setInputsInline(true);
+    this.appendStatementInput("Faire")
+        .setCheck(null)
+        .appendField("alors");
+    this.setTooltip('Permet de choisir lancer la détection des touches de la télécommande');
+    this.setColour(210);
+  }
+};
+
+Blockly.Blocks['if_touche_telecommande'] = {
+  helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
+  init: function() {
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.appendDummyInput()
         .appendField('Si touche de la telecommande appuyé')
         .appendField(new Blockly.FieldDropdown([["On/Off", "0xFD00FF"], 
                                                 ["Vol+", "0xFD807F"], 
@@ -469,6 +486,7 @@ Blockly.Blocks['if_telecommande'] = {
     this.setColour(210);
   }
 };
+
 Blockly.Blocks['if_color_ligne'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
   init: function() {
