@@ -239,16 +239,14 @@ Blockly.Arduino['if_telecommande'] = function(block) {
   var dropdown_option = block.getFieldValue('id_telecommande');
   
   var code =  'if (irrecv.decode(&results))\n'+ 
-              '{\n'+  
-              '   if(results.value == '+dropdown_option+')\n'+
-              '   {\n'+
-              '      '+statements_faire+
-              '   } \n'+    
+              '{\n'+ 
+              '   '+statements_faire+ 
               '   irrecv.resume();\n'+
               '}\n';
 
   return code;
 };
+
 /*Blockly.Arduino['if_color_ligne'] = function() {
   // If/elseif/else condition.
   var n = 0;
@@ -380,4 +378,10 @@ Blockly.Arduino ['CouleurLigne'] = function (block)  {
   //return code;
   ///var code  ="EpnBot.Getsuiveurligne()";
   //return [ code,  Blockly.Arduino.ORDER_ATOMIC ];
+};
+
+Blockly.Arduino['if_touche_telecommande'] = function(block) {
+  var dropdown_option = block.getFieldValue('id_telecommande');
+  var code =  'results.value == '+dropdown_option;
+  return code;
 };
