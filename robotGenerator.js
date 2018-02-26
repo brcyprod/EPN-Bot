@@ -241,7 +241,7 @@ Blockly.Arduino['if_telecommande'] = function(block) {
               '{\n'+  
               '   if(results.value == '+dropdown_option+')\n'+
               '   {\n'+
-              '      '+statements_faire +'\n'+
+              '      '+statements_faire+
               '   } \n'+    
               '   irrecv.resume();\n'+
               '}\n';
