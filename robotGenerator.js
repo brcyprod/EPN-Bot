@@ -3,7 +3,8 @@ goog.require('Blockly.Arduino');
 
 
 var setup_epnbot = 'EpnBot.begin();\n'+
-                   'bcle_temps_arret=millis();\n';
+                   'bcle_temps_arret=millis();\n'+
+                   'irrecv.enableIRIn();';
 
 var define_epnbot = //'#include <Servo.h>\n'+
  // '#include <Adafruit_NeoPixel.h>\n'+
