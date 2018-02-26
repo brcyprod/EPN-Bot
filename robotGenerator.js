@@ -237,11 +237,13 @@ Blockly.Arduino['if_telecommande'] = function(block) {
   var statements_faire = Blockly.Arduino.statementToCode(block, 'Faire');
   var dropdown_option = block.getFieldValue('id_telecommande');
   
-  var code =  'if (irrecv.decode(&results)) {\n'+  
-              '  if(results.value == '+dropdown_option+'){\n'+
-              '     '+statements_faire + '} \n'+
-              '  }\n'+     
-              '  irrecv.resume();\n'+  
+  var code =  'if (irrecv.decode(&results))\n'+ 
+              '{\n'+  
+              '   if(results.value == '+dropdown_option+')\n'+
+              '   {\n'+
+              '      '+statements_faire +'\n'+
+              '   } \n'+    
+              '   irrecv.resume();\n'+
               '}\n';
 
   return code;
