@@ -18,7 +18,7 @@ var define_epnbot = //'#include <Servo.h>\n'+
   '#define RELAI_ALIM_MOTEUR 2 // broche du relai alimentation des moteurs\n'+
   '#define INTER_BOT 13 // interrupteur robot\n'+
   '#define GRAYSCALE_SENSOR 0 // broche analogique du capteur de gris\n'+        
-  '#define RECV_PIN 11 // recepteur télécommande\n'+
+  '#define RECV_PIN 9 // recepteur télécommande\n'+
   '\n'+ 
   '//boucle de temps arret\n'+
   'unsigned long bcle_temps_arret=0;\n'+
