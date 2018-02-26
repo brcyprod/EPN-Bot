@@ -21,7 +21,9 @@ var define_epnbot = //'#include <Servo.h>\n'+
   '//boucle de temps arret\n'+
   'unsigned long bcle_temps_arret=0;\n'+
   '\n'+ 
-  'int etat_robot=0;\n'+
+  'int etat_robot=0;\n'+  
+  'IRrecv irrecv(RECV_PIN);\n'+      
+  'decode_results results;\n'+   
   '\n'+
     
   'EPNBot EpnBot(TRIGGER_PIN, ECHO_PIN, ROUE_DROITE_PIN, ROUE_GAUCHE_PIN, ANNEAU_LED_PIN, GRAYSCALE_SENSOR, RELAI_ALIM_MOTEUR, INTER_BOT);\n';
