@@ -383,5 +383,5 @@ Blockly.Arduino ['CouleurLigne'] = function (block)  {
 Blockly.Arduino['if_touche_telecommande'] = function(block) {
   var dropdown_option = block.getFieldValue('id_telecommande');
   var code =  'results.value == '+dropdown_option;
-  return code;
+  return [ code,  Blockly.Arduino.ORDER_ATOMIC ];
 };
