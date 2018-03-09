@@ -897,7 +897,7 @@ Blockly.Blocks['controls_if_telecommande'] = {
     this.setColour(210);
     this.appendValueInput('IF0')
         .setCheck('Boolean')
-        .appendField("test 6");
+        .appendField("Si touche télécommande ");
     this.appendStatementInput('DO0')
         .appendField("test 7");
     this.setPreviousStatement(true);
