@@ -857,18 +857,17 @@ Blockly.Blocks['if_touche_telecommande'] = {
 
 
 
-Blockly.Blocks.logic.HUE = 210;
 Blockly.Blocks['controls_if_if'] = {
   /**
    * Mutator block for if container.
    * @this Blockly.Block
    */
   init: function() {
-    this.setColour(Blockly.Blocks.logic.HUE);
+    this.setColour(210);
     this.appendDummyInput()
-        .appendField(Blockly.Msg.CONTROLS_IF_IF_TITLE_IF);
+        .appendField("test 1");
     this.appendStatementInput('STACK');
-    this.setTooltip(Blockly.Msg.CONTROLS_IF_IF_TOOLTIP);
+    this.setTooltip("test 2");
     this.contextMenu = false;
   }
 };
@@ -879,12 +878,12 @@ Blockly.Blocks['controls_if_elseif'] = {
    * @this Blockly.Block
    */
   init: function() {
-    this.setColour(Blockly.Blocks.logic.HUE);
+    this.setColour(210);
     this.appendDummyInput()
-        .appendField(Blockly.Msg.CONTROLS_IF_ELSEIF_TITLE_ELSEIF);
+        .appendField("test 3");
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setTooltip(Blockly.Msg.CONTROLS_IF_ELSEIF_TOOLTIP);
+    this.setTooltip("test 4");
     this.contextMenu = false;
   }
 };
@@ -895,13 +894,13 @@ Blockly.Blocks['controls_if_telecommande'] = {
    * @this Blockly.Block
    */
   init: function() {
-    this.setHelpUrl(Blockly.Msg.CONTROLS_IF_HELPURL);
-    this.setColour(Blockly.Blocks.logic.HUE);
+    this.setHelpUrl("test 5");
+    this.setColour(210);
     this.appendValueInput('IF0')
         .setCheck('Boolean')
-        .appendField(Blockly.Msg.CONTROLS_IF_MSG_IF);
+        .appendField("test 6");
     this.appendStatementInput('DO0')
-        .appendField(Blockly.Msg.CONTROLS_IF_MSG_THEN);
+        .appendField("test 7");
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setMutator(new Blockly.Mutator(['controls_if_elseif',
@@ -910,13 +909,13 @@ Blockly.Blocks['controls_if_telecommande'] = {
     var thisBlock = this;
     this.setTooltip(function() {
       if (!thisBlock.elseifCount_ && !thisBlock.elseCount_) {
-        return Blockly.Msg.CONTROLS_IF_TOOLTIP_1;
+        return "test 8";
       } else if (!thisBlock.elseifCount_ && thisBlock.elseCount_) {
-        return Blockly.Msg.CONTROLS_IF_TOOLTIP_2;
+        return "test"9;
       } else if (thisBlock.elseifCount_ && !thisBlock.elseCount_) {
-        return Blockly.Msg.CONTROLS_IF_TOOLTIP_3;
+        return "test 10";
       } else if (thisBlock.elseifCount_ && thisBlock.elseCount_) {
-        return Blockly.Msg.CONTROLS_IF_TOOLTIP_4;
+        return "test 11";
       }
       return '';
     });
@@ -952,13 +951,13 @@ Blockly.Blocks['controls_if_telecommande'] = {
     for (var i = 1; i <= this.elseifCount_; i++) {
       this.appendValueInput('IF' + i)
           .setCheck('Boolean')
-          .appendField(Blockly.Msg.CONTROLS_IF_MSG_ELSEIF);
+          .appendField("tset 12");
       this.appendStatementInput('DO' + i)
-          .appendField(Blockly.Msg.CONTROLS_IF_MSG_THEN);
+          .appendField("test 13");
     }
     if (this.elseCount_) {
       this.appendStatementInput('ELSE')
-          .appendField(Blockly.Msg.CONTROLS_IF_MSG_ELSE);
+          .appendField("test 14");
     }
   },
   /**
@@ -1009,9 +1008,9 @@ Blockly.Blocks['controls_if_telecommande'] = {
           this.elseifCount_++;
           var ifInput = this.appendValueInput('IF' + this.elseifCount_)
               .setCheck('Boolean')
-              .appendField(Blockly.Msg.CONTROLS_IF_MSG_ELSEIF);
+              .appendField("test 15");
           var doInput = this.appendStatementInput('DO' + this.elseifCount_);
-          doInput.appendField(Blockly.Msg.CONTROLS_IF_MSG_THEN);
+          doInput.appendField("test 16");
           // Reconnect any child blocks.
           if (clauseBlock.valueConnection_) {
             ifInput.connection.connect(clauseBlock.valueConnection_);
@@ -1023,7 +1022,7 @@ Blockly.Blocks['controls_if_telecommande'] = {
         case 'controls_if_else':
           this.elseCount_++;
           var elseInput = this.appendStatementInput('ELSE');
-          elseInput.appendField(Blockly.Msg.CONTROLS_IF_MSG_ELSE);
+          elseInput.appendField("test 17");
           // Reconnect any child blocks.
           if (clauseBlock.statementConnection_) {
             elseInput.connection.connect(clauseBlock.statementConnection_);
@@ -1075,11 +1074,11 @@ Blockly.Blocks['controls_if_else'] = {
    * @this Blockly.Block
    */
   init: function() {
-    this.setColour(Blockly.Blocks.logic.HUE);
+    this.setColour(210);
     this.appendDummyInput()
-        .appendField(Blockly.Msg.CONTROLS_IF_ELSE_TITLE_ELSE);
+        .appendField("test 18");
     this.setPreviousStatement(true);
-    this.setTooltip(Blockly.Msg.CONTROLS_IF_ELSE_TOOLTIP);
+    this.setTooltip("test 19");
     this.contextMenu = false;
   }
 };
