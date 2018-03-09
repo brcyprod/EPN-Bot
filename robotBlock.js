@@ -865,7 +865,7 @@ Blockly.Blocks['controls_if_if'] = {
     this.setColour(210);
     this.appendDummyInput()
         .appendField("test 1");
-    //this.appendStatementInput('STACK');
+    this.appendStatementInput('STACK');
     this.setTooltip("test 2");
     this.contextMenu = false;
   }
