@@ -854,15 +854,17 @@ Blockly.Blocks['if_touche_telecommande'] = {
 
 
 
+goog.provide('Blockly.Blocks.logic');
+
+goog.require('Blockly.Blocks');
 
 
-
-Blockly.Blocks['controls_if_if'] = {
+//Blockly.Blocks['controls_if_if'] = {
   /**
    * Mutator block for if container.
    * @this Blockly.Block
    */
-  init: function() {
+  /*init: function() {
     this.setColour(210);
     this.appendDummyInput()
         .appendField("test 1");
@@ -870,7 +872,7 @@ Blockly.Blocks['controls_if_if'] = {
     this.setTooltip("test 2");
     this.contextMenu = false;
   }
-};
+};*/
 
 Blockly.Blocks['controls_if_elseif'] = {
   /**
