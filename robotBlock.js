@@ -895,9 +895,33 @@ Blockly.Blocks['controls_if_telecommande'] = {
   init: function() {
     this.setHelpUrl("test 5");
     this.setColour(210);
-    this.appendValueInput('IF0')
-        .setCheck('Boolean')
-        .appendField("Si touche télécommande ");
+   // this.appendValueInput('IF0')
+    this.appendDummyInput()
+       // .setCheck('Boolean')
+        .appendField("Si touche télécommande ")
+        .appendField(new Blockly.FieldDropdown([["On/Off", "0xFD00FF"], 
+                                                ["Vol+", "0xFD807F"], 
+                                                ["Vol-", "0xFD906F"], 
+                                                ["Précédent", "0xFD20DF"], 
+                                                ["Suivant", "0xFD609F"], 
+                                                ["Func/Stop", "0xFD40BF"], 
+                                                ["Play/Pause", "0xFDA05F"], 
+                                                ["Haut", "0xFD50AF"], 
+                                                ["Bas", "0xFD10EF"], 
+                                                ["Eq", "0xFDB04F"], 
+                                                ["St/rept", "0xFD708F"], 
+                                                ["0", "0xFD30CF"], 
+                                                ["1", "0xFD08F7"], 
+                                                ["2", "0xFD8877"], 
+                                                ["3", "0xFD48B7"],  
+                                                ["4", "0xFD28D7"], 
+                                                ["5", "0xFDA857"], 
+                                                ["6", "0xFD6897"], 
+                                                ["7", "0xFD18E7"],
+                                                ["8", "0xFD9867"],
+                                                ["9", "0xFD58A7"]]), 
+                                                    "id_telecommande")
+        .appendField(" est pressée"); 
     this.appendStatementInput('DO0')
         .appendField("Faire");
     this.setPreviousStatement(true);
