@@ -401,7 +401,11 @@ Blockly.Arduino['if_touche_telecommande'] = function(block) {
 
 
 
-
+'if (irrecv.decode(&results))\n'+ 
+              '{\n'+ 
+              '   '+statements_faire+ 
+              '   irrecv.resume();\n'+
+              '}\n';
 
 
 
@@ -413,7 +417,9 @@ Blockly.Arduino['controls_if_telecommande'] = function(block) {
   //Blockly.Arduino.valueToCode(this, 'id_telecommande',
       //Blockly.Arduino.ORDER_NONE) || 'false2';
   var branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
-  var code = 'if (' + argument + ') {\n' + branch + '\n}';
+  var code =  'if (irrecv.decode(&results))\n'+ 
+              '{\n'+
+              '    if (results.value == ' + argument + ')\n   {\n' + branch + '\n    }';
   for (n = 1; n <= this.elseifCount_; n++) {
     argument = Blockly.Arduino.valueToCode(this, 'id_telecommande' + n,
       Blockly.Arduino.ORDER_NONE) || 'false';
@@ -424,5 +430,5 @@ Blockly.Arduino['controls_if_telecommande'] = function(block) {
     branch = Blockly.Arduino.statementToCode(this, 'ELSE');
     code += ' else {\n' + branch + '\n}';
   }
-  return code + '\n';
+  return code + '\n    }\n    irrecv.resume();\n}\n';
 };
