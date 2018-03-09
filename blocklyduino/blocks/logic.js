@@ -214,12 +214,12 @@ Blockly.Blocks['controls_if'] = {
   }
 };
 
-Blockly.Blocks['controls_if_if'] = {
+//Blockly.Blocks['controls_if_if'] = {
   /**
    * Mutator block for if container.
    * @this Blockly.Block
    */
-  init: function() {
+  /*init: function() {
     this.setColour(Blockly.Blocks.logic.HUE);
     this.appendDummyInput()
         .appendField(Blockly.Msg.CONTROLS_IF_IF_TITLE_IF);
@@ -227,7 +227,7 @@ Blockly.Blocks['controls_if_if'] = {
     this.setTooltip(Blockly.Msg.CONTROLS_IF_IF_TOOLTIP);
     this.contextMenu = false;
   }
-};
+};*/
 
 Blockly.Blocks['controls_if_elseif'] = {
   /**
