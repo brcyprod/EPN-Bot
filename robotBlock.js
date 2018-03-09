@@ -864,9 +864,9 @@ Blockly.Blocks['controls_if_if'] = {
   init: function() {
     this.setColour(210);
     this.appendDummyInput()
-        .appendField("test 1");
+        .appendField("Si");
     this.appendStatementInput('STACK');
-    this.setTooltip("test 2");
+    this.setTooltip("Ajouter, supprimer, ou reordonner les sections pour reconfigurer le bloc Si.");
     this.contextMenu = false;
   }
 };
@@ -879,10 +879,10 @@ Blockly.Blocks['controls_if_elseif'] = {
   init: function() {
     this.setColour(210);
     this.appendDummyInput()
-        .appendField("test 3");
+        .appendField("Sinon si");
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setTooltip("test 4");
+    this.setTooltip("Ajouter une condition au bloc Si.");
     this.contextMenu = false;
   }
 };
@@ -899,7 +899,7 @@ Blockly.Blocks['controls_if_telecommande'] = {
         .setCheck('Boolean')
         .appendField("Si touche télécommande ");
     this.appendStatementInput('DO0')
-        .appendField("test 7");
+        .appendField("Faire");
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setMutator(new Blockly.Mutator(['controls_if_elseif',
@@ -908,13 +908,13 @@ Blockly.Blocks['controls_if_telecommande'] = {
     var thisBlock = this;
     this.setTooltip(function() {
       if (!thisBlock.elseifCount_ && !thisBlock.elseCount_) {
-        return "test 8";
+        return "Si une valeur est vrai, alors exécuter certains ordres.";
       } else if (!thisBlock.elseifCount_ && thisBlock.elseCount_) {
-        return "test 9";
+        return "Si une valeur est vrai, alors exécuter le premier bloc d'ordres. Sinon, exécuter le second bloc d'ordres.";
       } else if (thisBlock.elseifCount_ && !thisBlock.elseCount_) {
-        return "test 10";
+        return "Si la première valeur est vrai, alors exécuter le premier bloc d'ordres. Sinon, si la seconde valeur est vrai, alors exécuter le second bloc d'ordres.";
       } else if (thisBlock.elseifCount_ && thisBlock.elseCount_) {
-        return "test 11";
+        return "Si la première valeur est vrai, alors exécuter le premier bloc d'ordres. Sinon, si la seconde valeur est vrai, alors exécuter le second bloc d'ordres. Si aucune des valeurs n'est vrai, exécuter le dernier bloc d'ordres.";
       }
       return '';
     });
@@ -950,13 +950,13 @@ Blockly.Blocks['controls_if_telecommande'] = {
     for (var i = 1; i <= this.elseifCount_; i++) {
       this.appendValueInput('IF' + i)
           .setCheck('Boolean')
-          .appendField("test 12");
+          .appendField("Sinon Si touche télécommande ");
       this.appendStatementInput('DO' + i)
-          .appendField("test 13");
+          .appendField("Faire");
     }
     if (this.elseCount_) {
       this.appendStatementInput('ELSE')
-          .appendField("test 14");
+          .appendField("Sinon");
     }
   },
   /**
@@ -1075,7 +1075,7 @@ Blockly.Blocks['controls_if_else'] = {
   init: function() {
     this.setColour(210);
     this.appendDummyInput()
-        .appendField("test 18");
+        .appendField("Sinon");
     this.setPreviousStatement(true);
     this.setTooltip("test 19");
     this.contextMenu = false;
