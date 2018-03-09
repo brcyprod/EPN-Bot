@@ -1077,7 +1077,7 @@ Blockly.Blocks['controls_if_else'] = {
     this.appendDummyInput()
         .appendField("Sinon");
     this.setPreviousStatement(true);
-    this.setTooltip("test 19");
+    this.setTooltip("Ajouter une condition finale fourre-tout au bloc Si.");
     this.contextMenu = false;
   }
 };
