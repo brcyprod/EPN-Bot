@@ -911,7 +911,7 @@ Blockly.Blocks['controls_if_telecommande'] = {
       if (!thisBlock.elseifCount_ && !thisBlock.elseCount_) {
         return "test 8";
       } else if (!thisBlock.elseifCount_ && thisBlock.elseCount_) {
-        return "test"9;
+        return "test 9";
       } else if (thisBlock.elseifCount_ && !thisBlock.elseCount_) {
         return "test 10";
       } else if (thisBlock.elseifCount_ && thisBlock.elseCount_) {
@@ -951,7 +951,7 @@ Blockly.Blocks['controls_if_telecommande'] = {
     for (var i = 1; i <= this.elseifCount_; i++) {
       this.appendValueInput('IF' + i)
           .setCheck('Boolean')
-          .appendField("tset 12");
+          .appendField("test 12");
       this.appendStatementInput('DO' + i)
           .appendField("test 13");
     }
