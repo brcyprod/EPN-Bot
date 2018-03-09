@@ -245,12 +245,12 @@ Blockly.Blocks['controls_if_elseif'] = {
   }
 };
 
-Blockly.Blocks['controls_if_telecommande'] = {
+//Blockly.Blocks['controls_if_telecommande'] = {
   /**
    * Block for if/elseif/else condition.
    * @this Blockly.Block
    */
-  init: function() {
+  /*init: function() {
     this.setHelpUrl(Blockly.Msg.CONTROLS_IF_HELPURL);
     this.setColour(Blockly.Blocks.logic.HUE);
     this.appendValueInput('IF0')
@@ -278,13 +278,13 @@ Blockly.Blocks['controls_if_telecommande'] = {
     });
     this.elseifCount_ = 0;
     this.elseCount_ = 0;
-  },
+  },*/
   /**
    * Create XML to represent the number of else-if and else inputs.
    * @return {Element} XML storage element.
    * @this Blockly.Block
    */
-  mutationToDom: function() {
+ /* mutationToDom: function() {
     if (!this.elseifCount_ && !this.elseCount_) {
       return null;
     }
@@ -296,13 +296,13 @@ Blockly.Blocks['controls_if_telecommande'] = {
       container.setAttribute('else', 1);
     }
     return container;
-  },
+  },*/
   /**
    * Parse XML to restore the else-if and else inputs.
    * @param {!Element} xmlElement XML storage element.
    * @this Blockly.Block
    */
-  domToMutation: function(xmlElement) {
+ /* domToMutation: function(xmlElement) {
     this.elseifCount_ = parseInt(xmlElement.getAttribute('elseif'), 10) || 0;
     this.elseCount_ = parseInt(xmlElement.getAttribute('else'), 10) || 0;
     for (var i = 1; i <= this.elseifCount_; i++) {
@@ -316,14 +316,14 @@ Blockly.Blocks['controls_if_telecommande'] = {
       this.appendStatementInput('ELSE')
           .appendField(Blockly.Msg.CONTROLS_IF_MSG_ELSE);
     }
-  },
+  },*/
   /**
    * Populate the mutator's dialog with this block's components.
    * @param {!Blockly.Workspace} workspace Mutator's workspace.
    * @return {!Blockly.Block} Root block in mutator.
    * @this Blockly.Block
    */
-  decompose: function(workspace) {
+  /*decompose: function(workspace) {
     var containerBlock = Blockly.Block.obtain(workspace, 'controls_if_if');
     containerBlock.initSvg();
     var connection = containerBlock.getInput('STACK').connection;
@@ -339,13 +339,13 @@ Blockly.Blocks['controls_if_telecommande'] = {
       connection.connect(elseBlock.previousConnection);
     }
     return containerBlock;
-  },
+  },*/
   /**
    * Reconfigure this block based on the mutator dialog's components.
    * @param {!Blockly.Block} containerBlock Root block in mutator.
    * @this Blockly.Block
    */
-  compose: function(containerBlock) {
+ /* compose: function(containerBlock) {
     // Disconnect the else input blocks and remove the inputs.
     if (this.elseCount_) {
       this.removeInput('ELSE');
@@ -391,13 +391,13 @@ Blockly.Blocks['controls_if_telecommande'] = {
       clauseBlock = clauseBlock.nextConnection &&
           clauseBlock.nextConnection.targetBlock();
     }
-  },
+  },*/
   /**
    * Store pointers to any connected child blocks.
    * @param {!Blockly.Block} containerBlock Root block in mutator.
    * @this Blockly.Block
    */
-  saveConnections: function(containerBlock) {
+ /* saveConnections: function(containerBlock) {
     var clauseBlock = containerBlock.getInputTargetBlock('STACK');
     var i = 1;
     while (clauseBlock) {
@@ -423,7 +423,7 @@ Blockly.Blocks['controls_if_telecommande'] = {
           clauseBlock.nextConnection.targetBlock();
     }
   }
-};
+};*/
 
 Blockly.Blocks['controls_if_else'] = {
   /**
