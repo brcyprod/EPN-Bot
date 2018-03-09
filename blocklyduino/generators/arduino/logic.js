@@ -48,6 +48,30 @@ Blockly.Arduino.controls_if = function() {
   return code + '\n';
 };
 
+Blockly.Arduino.controls_if_telecommande = function() {
+  // If/elseif/else condition.
+  var n = 0;
+  var argument = Blockly.Arduino.valueToCode(this, 'IF' + n,
+      Blockly.Arduino.ORDER_NONE) || 'false';
+  var branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
+  var code =  'if (irrecv.decode(&results))\n'+
+              '{\n'+        
+              'if (' + argument + ')\n'+
+              '{\n'+ branch + 
+              '\n}';
+  for (n = 1; n <= this.elseifCount_; n++) {
+    argument = Blockly.Arduino.valueToCode(this, 'IF' + n,
+      Blockly.Arduino.ORDER_NONE) || 'false';
+    branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
+    code += ' else if (' + argument + ') {\n' + branch + '}';
+  }
+  if (this.elseCount_) {
+    branch = Blockly.Arduino.statementToCode(this, 'ELSE');
+    code += ' else {\n' + branch + '\n}';
+  }
+  return code + '\nirrecv.resume();\n}\n';
+};
+
 Blockly.Arduino.logic_compare = function() {
   // Comparison operator.
   var mode = this.getFieldValue('OP');
