@@ -48,7 +48,7 @@ Blockly.Arduino.controls_if = function() {
   return code + '\n';
 };
 
-Blockly.Arduino.controls_if_telecommande = function() {
+/*Blockly.Arduino.controls_if_telecommande = function() {
   // If/elseif/else condition.
   var n = 0;
   var argument = Blockly.Arduino.valueToCode(this, 'IF' + n,
@@ -70,7 +70,7 @@ Blockly.Arduino.controls_if_telecommande = function() {
     code += ' else {\n' + branch + '\n}';
   }
   return code + '\nirrecv.resume();\n}\n';
-};
+};*/
 
 Blockly.Arduino.logic_compare = function() {
   // Comparison operator.
