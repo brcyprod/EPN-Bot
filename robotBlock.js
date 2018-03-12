@@ -888,7 +888,7 @@ Blockly.Blocks['controls_if_elseif'] = {
   }
 };
 
-Blockly.Blocks['controls_if'] = {
+Blockly.Blocks['controls_if_telecommande'] = {
   helpUrl: 'http://wiki.labaixbidouille.com/index.php/RoboduLAB',
   /**
    * Block for if/elseif/else condition.
