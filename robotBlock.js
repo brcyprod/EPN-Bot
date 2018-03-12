@@ -972,10 +972,10 @@ Blockly.Blocks['controls_if_telecommande'] = {
     this.elseifCount_ = parseInt(xmlElement.getAttribute('elseif'), 10) || 0;
     this.elseCount_ = parseInt(xmlElement.getAttribute('else'), 10) || 0;
     for (var i = 1; i <= this.elseifCount_; i++) {
-      /*this.appendValueInput('IF' + i)
+      this.appendValueInput('id_telecommande' + i)
           .setCheck('Boolean')
-          .appendField("Sinon Si touche télécommande ");*/ 
-    this.appendDummyInput()
+          .appendField("Sinon Si touche télécommande test12");*/ 
+    /*this.appendDummyInput()
        // .setCheck('Boolean')
         .appendField("Sinon Si touche télécommande ")     //test 12
         .appendField(new Blockly.FieldDropdown([["On/Off", "0xFD00FF"], 
@@ -999,7 +999,7 @@ Blockly.Blocks['controls_if_telecommande'] = {
                                                 ["7", "0xFD18E7"],
                                                 ["8", "0xFD9867"],
                                                 ["9", "0xFD58A7"]]), 
-                                                    "id_telecommande"+i)
+                                                    "id_telecommande"+i)*/
         .appendField(" est pressée"); 
       this.appendStatementInput('DO' + i)
           .appendField("Faire"); //test 13
@@ -1057,7 +1057,7 @@ Blockly.Blocks['controls_if_telecommande'] = {
           this.elseifCount_++;
           var ifInput = this.appendDummyInput()
        // .setCheck('Boolean')
-        /*.appendField("Sinon Si touche télécommande ") //test 15
+        .appendField("Sinon Si touche télécommande ") //test 15
         .appendField(new Blockly.FieldDropdown([["On/Off", "0xFD00FF"], 
                                                 ["Vol+", "0xFD807F"], 
                                                 ["Vol-", "0xFD906F"], 
@@ -1080,10 +1080,10 @@ Blockly.Blocks['controls_if_telecommande'] = {
                                                 ["8", "0xFD9867"],
                                                 ["9", "0xFD58A7"]]), 
                                                     "id_telecommande"+this.elseifCount_)
-        .appendField(" est pressée"); */
-          this.appendValueInput('id_telecommande' + this.elseifCount_)
+        .appendField(" est pressée"); 
+          /*this.appendValueInput('id_telecommande' + this.elseifCount_)
               .setCheck('Boolean')
-              .appendField("test 15");  //test 15
+              .appendField("test 15");  //test 15*/
           var doInput = this.appendStatementInput('DO' + this.elseifCount_);
           doInput.appendField("Faire"); //test 16
           // Reconnect any child blocks.
