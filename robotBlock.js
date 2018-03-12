@@ -953,7 +953,7 @@ Blockly.Blocks['controls_if_telecommande'] = {
                                                 ["7", "0xFD18E7"],
                                                 ["8", "0xFD9867"],
                                                 ["9", "0xFD58A7"]]), 
-                                                    "id_telecommande0"); 
+                                                    "IF0"); 
     //this.appendValueInput('IF0')
     //    .setCheck('Boolean')
     //    .appendField("test 6");
@@ -1035,7 +1035,7 @@ Blockly.Blocks['controls_if_telecommande'] = {
                                                 ["7", "0xFD18E7"],
                                                 ["8", "0xFD9867"],
                                                 ["9", "0xFD58A7"]]), 
-                                                    "id_telecommande"+i); 
+                                                    "IF"+i); 
       //this.appendValueInput('IF' + i)
       //    .setCheck('Boolean')
       //    .appendField("test 12");
@@ -1095,7 +1095,7 @@ Blockly.Blocks['controls_if_telecommande'] = {
       switch (clauseBlock.type) {
         case 'controls_if_elseif':
           this.elseifCount_++;
-          var ifInput = this.appendStatementInput('id_telecommande' + this.elseifCount_)
+          var ifInput = this.appendStatementInput('IF' + this.elseifCount_)
               .appendField("test 15bis");
           /*var ifInput = this.appendValueInput('IF' + this.elseifCount_)
               .setCheck('Boolean')
