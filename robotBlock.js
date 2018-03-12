@@ -953,7 +953,7 @@ Blockly.Blocks['controls_if_telecommande'] = {
                                                 ["8", "0xFD9867"],
                                                 ["9", "0xFD58A7"]]), 
                                                     "IF0"); */
-    this.appendValueInput('IF0')
+    this.appendValueInput("id_touche", 'IF0')
         .setCheck('telecommande')
         .appendField("Si touche de la télécommande appuyé ");
     this.appendStatementInput('DO0')
