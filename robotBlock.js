@@ -953,7 +953,7 @@ Blockly.Blocks['controls_if_telecommande'] = {
                                                 ["8", "0xFD9867"],
                                                 ["9", "0xFD58A7"]]), 
                                                     "IF0"); */
-    this.appendValueInput("TOUCHE_TELECOMMANDE", 'IF0')
+    this.appendValueInput('IF0')
         .setCheck('telecommande')
         .appendField("Si touche de la télécommande appuyé ");
     this.appendStatementInput('DO0')
@@ -1035,7 +1035,7 @@ Blockly.Blocks['controls_if_telecommande'] = {
                                                 ["8", "0xFD9867"],
                                                 ["9", "0xFD58A7"]]), 
                                                     'IF'+i); */
-      this.appendValueInput("TOUCHE_TELECOMMANDE", 'IF' + i)
+      this.appendValueInput('IF' + i)
           .setCheck('telecommande')
           .appendField("Sinon Si touche de la télécommande appuyé ");
       this.appendStatementInput('DO' + i)
@@ -1118,7 +1118,7 @@ Blockly.Blocks['controls_if_telecommande'] = {
                                                                 ["8", "0xFD9867"],
                                                                 ["9", "0xFD58A7"]]), 
                                                                     "IF"+this.elseifCount_); */
-          var ifInput = this.appendValueInput("TOUCHE_TELECOMMANDE", 'IF' + this.elseifCount_)
+          var ifInput = this.appendValueInput('IF' + this.elseifCount_)
               .setCheck('telecommande')
               .appendField("Sinon Si touche de la télécommande appuyé ");
           var doInput = this.appendStatementInput('DO' + this.elseifCount_);
