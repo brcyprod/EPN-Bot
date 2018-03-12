@@ -930,7 +930,7 @@ Blockly.Blocks['controls_if_telecommande'] = {
    */
   init: function() {
     this.setColour(210);
-     /*this.appendDummyInput()
+     this.appendDummyInput()
         .appendField('Si touche de la telecommande appuyé')
         .appendField(new Blockly.FieldDropdown([["On/Off", "0xFD00FF"], 
                                                 ["Vol+", "0xFD807F"], 
@@ -953,10 +953,10 @@ Blockly.Blocks['controls_if_telecommande'] = {
                                                 ["7", "0xFD18E7"],
                                                 ["8", "0xFD9867"],
                                                 ["9", "0xFD58A7"]]), 
-                                                    "IF0"); */
-    this.appendValueInput('IF0')
+                                                    "IF0"); 
+    /*this.appendValueInput('IF0')
         .setCheck('Boolean')
-        .appendField("test 6");
+        .appendField("test 6");*/
     this.appendStatementInput('DO0')
         .appendField("Faire");
         //.appendField("test 7");
@@ -1012,7 +1012,7 @@ Blockly.Blocks['controls_if_telecommande'] = {
     this.elseifCount_ = parseInt(xmlElement.getAttribute('elseif'), 10) || 0;
     this.elseCount_ = parseInt(xmlElement.getAttribute('else'), 10) || 0;
     for (var i = 1; i <= this.elseifCount_; i++) {
-      this.appendDummyInput()
+     /* this.appendDummyInput()
         .appendField('Sinon Si touchebis de la telecommande appuyé')
         .appendField(new Blockly.FieldDropdown([["On/Off", "0xFD00FF"], 
                                                 ["Vol+", "0xFD807F"], 
@@ -1035,10 +1035,10 @@ Blockly.Blocks['controls_if_telecommande'] = {
                                                 ["7", "0xFD18E7"],
                                                 ["8", "0xFD9867"],
                                                 ["9", "0xFD58A7"]]), 
-                                                    'IF'+i); 
-      /*this.appendValueInput('IF' + i)
+                                                    'IF'+i); */
+      this.appendValueInput('IF' + i)
           .setCheck('Boolean')
-          .appendField("test 12");*/
+          .appendField("test 12");
       this.appendStatementInput('DO' + i)
           .appendField("Faire");
           //.appendField("test 13");
@@ -1095,7 +1095,7 @@ Blockly.Blocks['controls_if_telecommande'] = {
       switch (clauseBlock.type) {
         case 'controls_if_elseif':
           this.elseifCount_++;
-          /*var ifInput = this.appendDummyInput()
+          var ifInput = this.appendDummyInput()
                         .appendField('Sinon Si touche de la telecommande appuyé')
                         .appendField(new Blockly.FieldDropdown([["On/Off", "0xFD00FF"], 
                                                                 ["Vol+", "0xFD807F"], 
@@ -1118,10 +1118,10 @@ Blockly.Blocks['controls_if_telecommande'] = {
                                                                 ["7", "0xFD18E7"],
                                                                 ["8", "0xFD9867"],
                                                                 ["9", "0xFD58A7"]]), 
-                                                                    "IF"+this.elseifCount_); */
-          var ifInput = this.appendValueInput('IF' + this.elseifCount_)
+                                                                    "IF"+this.elseifCount_); 
+          /*var ifInput = this.appendValueInput('IF' + this.elseifCount_)
               .setCheck('Boolean')
-              .appendField("test 15");
+              .appendField("test 15");*/
           var doInput = this.appendStatementInput('DO' + this.elseifCount_);
           doInput.appendField("Faire");
           //doInput.appendField("test 16");
