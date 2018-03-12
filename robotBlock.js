@@ -808,7 +808,6 @@ Blockly.Blocks['if_touche_telecommande'] = {
     /*this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);*/
     this.appendDummyInput()
-        .appendField('Si touche de la telecommande appuyé')
         .appendField(new Blockly.FieldDropdown([["On/Off", "0xFD00FF"], 
                                                 ["Vol+", "0xFD807F"], 
                                                 ["Vol-", "0xFD906F"], 
@@ -831,7 +830,7 @@ Blockly.Blocks['if_touche_telecommande'] = {
                                                 ["8", "0xFD9867"],
                                                 ["9", "0xFD58A7"]]), 
                                                     "id_telecommande"); 
-    this.setOutput(true, 'Boolean');
+    this.setOutput(true, 'telecommande');
    /*this.setInputsInline(true);
     this.appendStatementInput("Faire")
         .setCheck(null)
@@ -930,7 +929,7 @@ Blockly.Blocks['controls_if_telecommande'] = {
    */
   init: function() {
     this.setColour(210);
-     this.appendDummyInput()
+     /*this.appendDummyInput()
         .appendField('Si touche de la telecommande appuyé')
         .appendField(new Blockly.FieldDropdown([["On/Off", "0xFD00FF"], 
                                                 ["Vol+", "0xFD807F"], 
@@ -953,10 +952,10 @@ Blockly.Blocks['controls_if_telecommande'] = {
                                                 ["7", "0xFD18E7"],
                                                 ["8", "0xFD9867"],
                                                 ["9", "0xFD58A7"]]), 
-                                                    "IF0"); 
-    /*this.appendValueInput('IF0')
-        .setCheck('Boolean')
-        .appendField("test 6");*/
+                                                    "IF0"); */
+    this.appendValueInput('IF0')
+        .setCheck('telecommande')
+        .appendField("Si touche de la télécommande appuyé ");
     this.appendStatementInput('DO0')
         .appendField("Faire");
         //.appendField("test 7");
@@ -1037,8 +1036,8 @@ Blockly.Blocks['controls_if_telecommande'] = {
                                                 ["9", "0xFD58A7"]]), 
                                                     'IF'+i); */
       this.appendValueInput('IF' + i)
-          .setCheck('Boolean')
-          .appendField("test 12");
+          .setCheck('telecommande')
+          .appendField("Sinon Si touche de la télécommande appuyé ");
       this.appendStatementInput('DO' + i)
           .appendField("Faire");
           //.appendField("test 13");
@@ -1095,7 +1094,7 @@ Blockly.Blocks['controls_if_telecommande'] = {
       switch (clauseBlock.type) {
         case 'controls_if_elseif':
           this.elseifCount_++;
-          var ifInput = this.appendDummyInput()
+          /*var ifInput = this.appendDummyInput()
                         .appendField('Sinon Si touche de la telecommande appuyé')
                         .appendField(new Blockly.FieldDropdown([["On/Off", "0xFD00FF"], 
                                                                 ["Vol+", "0xFD807F"], 
@@ -1118,10 +1117,10 @@ Blockly.Blocks['controls_if_telecommande'] = {
                                                                 ["7", "0xFD18E7"],
                                                                 ["8", "0xFD9867"],
                                                                 ["9", "0xFD58A7"]]), 
-                                                                    "IF"+this.elseifCount_); 
-          /*var ifInput = this.appendValueInput('IF' + this.elseifCount_)
-              .setCheck('Boolean')
-              .appendField("test 15");*/
+                                                                    "IF"+this.elseifCount_); */
+          var ifInput = this.appendValueInput('IF' + this.elseifCount_)
+              .setCheck('telecommande')
+              .appendField("Sinon Si touche de la télécommande appuyé ");
           var doInput = this.appendStatementInput('DO' + this.elseifCount_);
           doInput.appendField("Faire");
           //doInput.appendField("test 16");
