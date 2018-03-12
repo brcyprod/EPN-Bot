@@ -857,6 +857,36 @@ Blockly.Blocks['if_touche_telecommande'] = {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Blockly.Blocks['controls_if_if'] = {
   /**
    * Mutator block for if container.
@@ -865,9 +895,11 @@ Blockly.Blocks['controls_if_if'] = {
   init: function() {
     this.setColour(210);
     this.appendDummyInput()
-        .appendField("test 1");
+        .appendField("Si");
+        //.appendField("test 1");
     this.appendStatementInput('STACK');
-    this.setTooltip("tset 2");
+    this.setTooltip("Ajouter, supprimer, ou reordonner les sections pour reconfigurer le bloc Si.");
+    //this.setTooltip("test 2");
     this.contextMenu = false;
   }
 };
@@ -880,10 +912,12 @@ Blockly.Blocks['controls_if_elseif'] = {
   init: function() {
     this.setColour(210);
     this.appendDummyInput()
-        .appendField("test 3");
+        .appendField("Sinon Si");
+        //.appendField("test 3");
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setTooltip("test 4");
+    this.setTooltip("Ajouter une condition au bloc Si.");
+    //this.setTooltip("test 4");
     this.contextMenu = false;
   }
 };
@@ -896,11 +930,36 @@ Blockly.Blocks['controls_if_telecommande'] = {
    */
   init: function() {
     this.setColour(210);
-    this.appendValueInput('IF0')
-        .setCheck('Boolean')
-        .appendField("test 6");
+     this.appendDummyInput()
+        .appendField('Si touche de la telecommande appuyé')
+        .appendField(new Blockly.FieldDropdown([["On/Off", "0xFD00FF"], 
+                                                ["Vol+", "0xFD807F"], 
+                                                ["Vol-", "0xFD906F"], 
+                                                ["Précédent", "0xFD20DF"], 
+                                                ["Suivant", "0xFD609F"], 
+                                                ["Func/Stop", "0xFD40BF"], 
+                                                ["Play/Pause", "0xFDA05F"], 
+                                                ["Haut", "0xFD50AF"], 
+                                                ["Bas", "0xFD10EF"], 
+                                                ["Eq", "0xFDB04F"], 
+                                                ["St/rept", "0xFD708F"], 
+                                                ["0", "0xFD30CF"], 
+                                                ["1", "0xFD08F7"], 
+                                                ["2", "0xFD8877"], 
+                                                ["3", "0xFD48B7"],  
+                                                ["4", "0xFD28D7"], 
+                                                ["5", "0xFDA857"], 
+                                                ["6", "0xFD6897"], 
+                                                ["7", "0xFD18E7"],
+                                                ["8", "0xFD9867"],
+                                                ["9", "0xFD58A7"]]), 
+                                                    "id_telecommande0"); 
+    //this.appendValueInput('IF0')
+    //    .setCheck('Boolean')
+    //    .appendField("test 6");
     this.appendStatementInput('DO0')
-        .appendField("test 7");
+        .appendField("Faire");
+        //.appendField("test 7");
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setMutator(new Blockly.Mutator(['controls_if_elseif',
@@ -1100,7 +1159,7 @@ Sinon Si
 //test 4
 Ajouter une condition au bloc Si.
 //test 5
-???????
+url help
 //test 6
 Sinon Si touche télécommande xx est pressée
 //test 7
