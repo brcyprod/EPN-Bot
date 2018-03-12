@@ -1013,7 +1013,7 @@ Blockly.Blocks['controls_if_telecommande'] = {
     this.elseCount_ = parseInt(xmlElement.getAttribute('else'), 10) || 0;
     for (var i = 1; i <= this.elseifCount_; i++) {
       this.appendDummyInput()
-        .appendField('Sinon Si touche de la telecommande appuyé')
+        .appendField('Sinon Si touchebis de la telecommande appuyé')
         .appendField(new Blockly.FieldDropdown([["On/Off", "0xFD00FF"], 
                                                 ["Vol+", "0xFD807F"], 
                                                 ["Vol-", "0xFD906F"], 
@@ -1095,7 +1095,7 @@ Blockly.Blocks['controls_if_telecommande'] = {
       switch (clauseBlock.type) {
         case 'controls_if_elseif':
           this.elseifCount_++;
-          var ifInput = this.appendStatementInput('IF' + this.elseifCount_)
+          var ifInput = this.appendDummyInput()
                         .appendField('Sinon Si touche de la telecommande appuyé')
                         .appendField(new Blockly.FieldDropdown([["On/Off", "0xFD00FF"], 
                                                                 ["Vol+", "0xFD807F"], 
@@ -1136,7 +1136,7 @@ Blockly.Blocks['controls_if_telecommande'] = {
         case 'controls_if_else':
           this.elseCount_++;
           var elseInput = this.appendStatementInput('ELSE');
-          elseInput.appendField("test 17");
+          elseInput.appendField("Sinon");
           // Reconnect any child blocks.
           if (clauseBlock.statementConnection_) {
             elseInput.connection.connect(clauseBlock.statementConnection_);
@@ -1191,6 +1191,7 @@ Blockly.Blocks['controls_if_else'] = {
     this.setColour(210);
     this.appendDummyInput()
         .appendField("Sinon");
+        //.appendField("test 18");
     this.setPreviousStatement(true);
     this.setTooltip("Ajouter une condition finale fourre-tout au bloc Si.");
     //this.setTooltip("test 19");
