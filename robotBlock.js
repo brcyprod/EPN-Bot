@@ -968,13 +968,17 @@ Blockly.Blocks['controls_if_telecommande'] = {
     var thisBlock = this;
     this.setTooltip(function() {
       if (!thisBlock.elseifCount_ && !thisBlock.elseCount_) {
-        return "test 8";
+        return "Si une valeur est vrai, alors exécuter certains ordres.";
+        //return "test 8";
       } else if (!thisBlock.elseifCount_ && thisBlock.elseCount_) {
-        return "test 9";
+        return "Si une valeur est vrai, alors exécuter le premier bloc d'ordres. Sinon, exécuter le second bloc d'ordres.";
+        //return "test 9";
       } else if (thisBlock.elseifCount_ && !thisBlock.elseCount_) {
-        return "test 10";
+        return "Si la première valeur est vrai, alors exécuter le premier bloc d'ordres. Sinon, si la seconde valeur est vrai, alors exécuter le second bloc d'ordres.";
+        //return "test 10";
       } else if (thisBlock.elseifCount_ && thisBlock.elseCount_) {
-        return "test 11";
+        return "Si la première valeur est vrai, alors exécuter le premier bloc d'ordres. Sinon, si la seconde valeur est vrai, alors exécuter le second bloc d'ordres. Si aucune des valeurs n'est vrai, exécuter le dernier bloc d'ordres.";
+        //return "test 11";
       }
       return '';
     });
@@ -1008,15 +1012,41 @@ Blockly.Blocks['controls_if_telecommande'] = {
     this.elseifCount_ = parseInt(xmlElement.getAttribute('elseif'), 10) || 0;
     this.elseCount_ = parseInt(xmlElement.getAttribute('else'), 10) || 0;
     for (var i = 1; i <= this.elseifCount_; i++) {
-      this.appendValueInput('IF' + i)
-          .setCheck('Boolean')
-          .appendField("test 12");
+      this.appendDummyInput()
+        .appendField('Sinon Si touche de la telecommande appuyé')
+        .appendField(new Blockly.FieldDropdown([["On/Off", "0xFD00FF"], 
+                                                ["Vol+", "0xFD807F"], 
+                                                ["Vol-", "0xFD906F"], 
+                                                ["Précédent", "0xFD20DF"], 
+                                                ["Suivant", "0xFD609F"], 
+                                                ["Func/Stop", "0xFD40BF"], 
+                                                ["Play/Pause", "0xFDA05F"], 
+                                                ["Haut", "0xFD50AF"], 
+                                                ["Bas", "0xFD10EF"], 
+                                                ["Eq", "0xFDB04F"], 
+                                                ["St/rept", "0xFD708F"], 
+                                                ["0", "0xFD30CF"], 
+                                                ["1", "0xFD08F7"], 
+                                                ["2", "0xFD8877"], 
+                                                ["3", "0xFD48B7"],  
+                                                ["4", "0xFD28D7"], 
+                                                ["5", "0xFDA857"], 
+                                                ["6", "0xFD6897"], 
+                                                ["7", "0xFD18E7"],
+                                                ["8", "0xFD9867"],
+                                                ["9", "0xFD58A7"]]), 
+                                                    "id_telecommande"+i); 
+      //this.appendValueInput('IF' + i)
+      //    .setCheck('Boolean')
+      //    .appendField("test 12");
       this.appendStatementInput('DO' + i)
-          .appendField("test 13");
+          .appendField("Faire");
+          //.appendField("test 13");
     }
     if (this.elseCount_) {
       this.appendStatementInput('ELSE')
-          .appendField("test 14");
+          .appendField("Sinon");
+          //.appendField("test 14");
     }
   },
   /**
@@ -1135,9 +1165,10 @@ Blockly.Blocks['controls_if_else'] = {
   init: function() {
     this.setColour(210);
     this.appendDummyInput()
-        .appendField("test 18");
+        .appendField("Sinon");
     this.setPreviousStatement(true);
-    this.setTooltip("test 19");
+    this.setTooltip("Ajouter une condition finale fourre-tout au bloc Si.");
+    //this.setTooltip("test 19");
     this.contextMenu = false;
   }
 };
@@ -1161,7 +1192,7 @@ Ajouter une condition au bloc Si.
 //test 5
 url help
 //test 6
-Sinon Si touche télécommande xx est pressée
+Si touche télécommande xx est pressée
 //test 7
 Faire
 //test 8
