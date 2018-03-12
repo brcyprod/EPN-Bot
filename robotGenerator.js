@@ -398,7 +398,7 @@ Blockly.Arduino['if_touche_telecommande'] = function(block) {
 
 
 
-
+/*
 
 
 'if (irrecv.decode(&results))\n'+ 
@@ -432,3 +432,4 @@ Blockly.Arduino['controls_if_telecommande'] = function(block) {
   }
   return code + '\n    }\n    irrecv.resume();\n}\n';
 };
+*/
