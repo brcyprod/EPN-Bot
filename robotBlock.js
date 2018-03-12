@@ -974,7 +974,7 @@ Blockly.Blocks['controls_if_telecommande'] = {
     for (var i = 1; i <= this.elseifCount_; i++) {
       this.appendValueInput('id_telecommande' + i)
           .setCheck('Boolean')
-          .appendField("Sinon Si touche télécommande test12");*/ 
+          .appendField("Sinon Si touche télécommande test12");
     /*this.appendDummyInput()
        // .setCheck('Boolean')
         .appendField("Sinon Si touche télécommande ")     //test 12
@@ -1055,7 +1055,8 @@ Blockly.Blocks['controls_if_telecommande'] = {
       switch (clauseBlock.type) {
         case 'controls_if_elseif':
           this.elseifCount_++;
-          var ifInput = this.appendDummyInput()
+          var ifInput = 
+              this.appendDummyInput()
        // .setCheck('Boolean')
         .appendField("Sinon Si touche télécommande ") //test 15
         .appendField(new Blockly.FieldDropdown([["On/Off", "0xFD00FF"], 
@@ -1157,3 +1158,44 @@ Blockly.Blocks['controls_if_else'] = {
     this.contextMenu = false;
   }
 };
+
+/*
+//test 1
+Si
+//test 2
+Ajouter, supprimer, ou reordonner les sections pour reconfigurer le bloc Si.
+//test 3
+Sinon Si
+//test 4
+Ajouter une condition au bloc Si.
+//test 5
+???????
+//test 6
+Sinon Si touche télécommande xx est pressée
+//test 7
+Faire
+//test 8
+Si une valeur est vrai, alors exécuter certains ordres.
+//test 9
+Si une valeur est vrai, alors exécuter le premier bloc d'ordres. Sinon, exécuter le second bloc d'ordres.
+//test 10
+Si la première valeur est vrai, alors exécuter le premier bloc d'ordres. Sinon, si la seconde valeur est vrai, alors exécuter le second bloc d'ordres.
+//test 11
+Si la première valeur est vrai, alors exécuter le premier bloc d'ordres. Sinon, si la seconde valeur est vrai, alors exécuter le second bloc d'ordres. Si aucune des valeurs n'est vrai, exécuter le dernier bloc d'ordres.
+//test 12
+Sinon Si touche télécommande xx est pressée
+//test 13
+Faire
+//test 14
+Sinon
+//test 15
+Sinon Si touche télécommande xx est pressée
+//test 16
+Faire
+//test 17
+Sinon
+//test 18
+Sinon
+//test 19
+Ajouter une condition finale fourre-tout au bloc Si.
+*/
