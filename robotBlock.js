@@ -1095,11 +1095,14 @@ Blockly.Blocks['controls_if_telecommande'] = {
       switch (clauseBlock.type) {
         case 'controls_if_elseif':
           this.elseifCount_++;
-          var ifInput = this.appendValueInput('IF' + this.elseifCount_)
+          var ifInput = this.appendStatementInput('id_telecommande' + this.elseifCount_)
+              .appendField("test 15bis");
+          /*var ifInput = this.appendValueInput('IF' + this.elseifCount_)
               .setCheck('Boolean')
-              .appendField("test 15");
+              .appendField("test 15");*/
           var doInput = this.appendStatementInput('DO' + this.elseifCount_);
-          doInput.appendField("test 16");
+          doInput.appendField("Faire");
+          //doInput.appendField("test 16");
           // Reconnect any child blocks.
           if (clauseBlock.valueConnection_) {
             ifInput.connection.connect(clauseBlock.valueConnection_);
