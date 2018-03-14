@@ -808,6 +808,7 @@ Blockly.Blocks['if_touche_telecommande'] = {
     /*this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);*/
     this.appendDummyInput()
+        .appendField("touche ")
         .appendField(new Blockly.FieldDropdown([["On/Off", "0xFD00FF"], 
                                                 ["Vol+", "0xFD807F"], 
                                                 ["Vol-", "0xFD906F"], 
